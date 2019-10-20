@@ -131,7 +131,7 @@ class CurrencyInput extends Component {
             selectionStart = Math.min(node.selectionStart, selectionEnd);
         }
 
-        // this.setSelectionRange(node, selectionStart, selectionEnd);
+        this.setSelectionRange(node, selectionStart, selectionEnd);
     }
 
 
@@ -153,6 +153,7 @@ class CurrencyInput extends Component {
      * @see https://facebook.github.io/react/docs/react-component.html#componentdidupdate
      */
     componentDidUpdate(prevProps, prevState){
+        console.log('luxodev react-currency-input');
         const { decimalSeparator } = this.props;
         let node = ReactDOM.findDOMNode(this.theInput);
         let isNegative = (this.theInput.value.match(/-/g) || []).length % 2 === 1;
@@ -183,7 +184,7 @@ class CurrencyInput extends Component {
             selectionStart = selectionEnd;
         }
 
-        // this.setSelectionRange(node, selectionStart, selectionEnd);
+        this.setSelectionRange(node, selectionStart, selectionEnd);
         this.inputSelectionStart = selectionStart;
         this.inputSelectionEnd = selectionEnd;
     }
@@ -196,7 +197,7 @@ class CurrencyInput extends Component {
      */
     setSelectionRange(node, start, end) {
       if (document.activeElement === node) {
-        node.setSelectionRange(start, end);
+        // node.setSelectionRange(start, end);
       }
     }
 
